@@ -10,16 +10,18 @@
     <title>ZEN OAS</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.png" type="image/png">
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/0517951e44.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="javascript/main.js" defer></script>
 </head>
 
 <body>
@@ -39,6 +41,21 @@
                 <li><a href="about.html">Om oss</a></li>
             </ul>
         </nav>
+        <button class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-menu" id="mobile-nav">
+                <ul>
+                    <li><a class="current" href="index.html">Hem</a></li>
+                    <li><a href="news.html">Nyheter</a></li>
+                    <li><a href="products.html">Tjänster</a></li>
+                    <li><a href="about.html">Om oss</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Herosektion med bild och huvudrubrik -->
