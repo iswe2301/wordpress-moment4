@@ -1,0 +1,327 @@
+/* Grundläggande reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Grundläggande styling */
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #8B4513;
+    background-color: #F5F5DC;
+    padding: 0;
+    margin: 0;
+}
+
+/* Rubriker, text och länkar */
+h1 {
+    font-size: 4rem;
+    margin: 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h4 {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h5 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+h6 {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    padding: 0.5rem;
+    letter-spacing: 0.5px;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    color: #556B2F;
+}
+
+a:hover {
+    color: #415224;
+    text-decoration: underline;
+}
+
+/* Bilder */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Header och meny/nav */
+header {
+    display: flex;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D2B48C;
+    padding: 1rem 2rem 1rem 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .logo img {
+    max-height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #8B4513;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+/* Aktiva länkar och hover-effekter */
+.current,
+nav a:hover,
+.btn:hover, .sidebar .search-btn:hover {
+    background-color: #8B4513;
+    color: #FFFFFF;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hero-bild om text */
+.hero {
+    position: relative;
+    background: url('../img/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Knappar */
+.btn {
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.8rem 1.5rem;
+    background-color: #556B2F;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem auto;
+    text-decoration: none;
+}
+
+.background-btn {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Container */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Main-container */
+main {
+    flex: 3;
+    padding: 1rem;
+}
+
+/* Sektioner */
+section {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background-color: #D2B48C;
+    padding: 1rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+}
+
+/* Lista i sidebar */
+.sidebar ul {
+    margin: 1rem 0;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #556B2F;
+    padding: 0.5rem 0;
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+}
+
+/* Sökformulär i sidebar */
+.sidebar .search-input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 2px solid #556B2F;
+    border-radius: 5px;
+}
+
+.sidebar .search-btn {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #556B2F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Sociala medielänkar i sidebar */
+.sidebar .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.sidebar .social-media a {
+    font-size: 1.4rem;
+}
+
+/* Anpassning för sidor utan sidebar */
+.container.no-sidebar {
+    flex-direction: column;
+}
+
+.container.no-sidebar main {
+    flex: 1;
+    margin: 0 auto;
+}
+
+/* Tjänster */
+.services .service-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.service-item {
+    max-width: 300px;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 5px;
+    min-height: 170px;
+}
+
+/* Footer */
+footer {
+    background-color: #556B2F;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries, anpassning för mindre skärmar (1024px) */
+@media screen and (max-width: 1024px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container main {
+        flex: 1;
+        margin: 0 auto;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .service-item img {
+        min-height: 200px;
+    }
+
+}
+
+/* Media queries, anpassning för mindre skärmar (768px) */
+@media screen and (max-width: 768px) {
+
+    .service-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
