@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     font-size: 1rem;
     color: #8B4513;
-    background-color: #F5F5DC;
+    background-color: #FAF3E0;
     padding: 0;
     margin: 0;
 }
@@ -26,14 +26,14 @@ h1 {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     letter-spacing: 0.1rem;
     margin: 1rem 0 0.5rem 0;
     font-family: "Montserrat", sans-serif;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 2rem;
     letter-spacing: 0.1rem;
     margin: 1rem 0 0.5rem 0;
     font-family: "Montserrat", sans-serif;
@@ -64,6 +64,9 @@ p {
     padding: 0.5rem;
     letter-spacing: 0.5px;
     font-family: "Roboto", sans-serif;
+    max-width: 90ch;
+    margin: 0 auto;
+    color: #333;
 }
 
 a {
@@ -150,10 +153,15 @@ nav a:hover,
     max-height: 600px;
 }
 
+.hero h2 {
+    font-size: 2.5rem;
+}
+
 .hero p {
     font-size: 1.2rem;
     letter-spacing: 2px;
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 /* Knappar */
@@ -170,7 +178,7 @@ nav a:hover,
     font-size: 1rem;
     margin: 1rem auto;
     text-decoration: none;
-    transition: 0.3z;
+    transition: 0.3s;
 }
 
 .background-btn {
@@ -228,8 +236,12 @@ section {
     padding: 0.5rem 0;
 }
 
-.sidebar h2 {
+.sidebar h3 {
     font-size: 1.3rem;
+}
+
+.sidebar h4 {
+    font-size: 1rem;
 }
 
 /* Sökformulär i sidebar & footer */
@@ -285,10 +297,15 @@ section {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .services a {
     text-decoration: none;
+}
+
+.services h3 {
+    font-size: 1.8rem;
 }
 
 .service-item {
@@ -412,6 +429,96 @@ section {
     border: none;
     border-top: 1px solid #ddd;
     margin-bottom: 2rem;
+}
+
+/* Om oss */
+.about-us img {
+    margin-top: 2rem;
+}
+
+.about {
+border-bottom: 1px solid #ddd;
+}
+
+/* Kontaktformulär */
+.contact-form {
+    max-width: 700px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background-color: #fdfaf3;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Roboto", sans-serif;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    color: #8B4513;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.contact-form p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-family: "montserrat", sans-serif;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #556B2F;
+    box-shadow: 0 0 5px rgba(85, 107, 47, 0.5);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form .btn {
+    width: 50%;
+    border: none;
+    margin-right: 50%;
+}
+
+.contact-form button:hover {
+    background-color: #6b8e3f;
+    transform: scale(1.02);
+}
+
+.contact-form button:active {
+    background-color: #8B4513;
+    transform: scale(0.98);
 }
 
 /* Hamburgerknappen */
@@ -541,7 +648,7 @@ footer .social-media a {
     margin: 0.5rem 0;
 }
 
-footer a {
+footer a, footer p {
     color: #FFFFFF;
 }
 
@@ -567,7 +674,7 @@ footer .social-content {
 
 .sub-footer {
     border-top: 1px solid #ddd;
-    padding-top: 1.5rem;
+    padding: 1.5rem 10rem;
     text-align: center;
 }
 
@@ -616,11 +723,32 @@ footer .social-content {
 
     main {
         padding: 0;
+        width: 100%;
     }
 
     .container {
-        padding: 0%;
+        padding: 1rem;
         margin: 0 auto 2rem auto;
+    }
+
+    section, .news-container {
+        padding: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero h2, h2 {
+        font-size: 1.8rem;
+    }
+
+    h3, .news-container h3, .services h3 {
+        font-size: 1.6rem;
+    }
+
+    h4, .news-post h4 {
+        font-size: 1.3rem;
     }
 
     .service-grid {
@@ -647,6 +775,15 @@ footer .social-content {
         text-align: center;
     }
 
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .contact-form .btn {
+        width: 100%;
+        margin-right: auto;
+    }    
+
     footer form {
         flex-direction: column;
         align-items: center;
@@ -655,5 +792,13 @@ footer .social-content {
     footer .search-btn {
         width: 100%;
         margin-left: 0;
+    }
+
+    .main-footer div {
+        min-width: 100%;
+    }
+
+    .sub-footer {
+        padding: 1.5rem 2rem;
     }
 }
