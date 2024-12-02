@@ -126,8 +126,7 @@ nav a {
 /* Aktiva länkar och hover-effekter */
 .current,
 nav a:hover,
-.btn:hover,
-.sidebar .search-btn:hover {
+.btn:hover {
     background-color: #8B4513;
     color: #FFFFFF;
     border-radius: 5px;
@@ -153,6 +152,10 @@ nav a:hover,
     max-height: 600px;
 }
 
+.hero .btn {
+    padding: 1rem 2rem;
+}
+
 .hero h2 {
     font-size: 2.5rem;
 }
@@ -170,7 +173,7 @@ nav a:hover,
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     background-color: #556B2F;
     color: #FFFFFF;
     text-decoration: none;
@@ -179,6 +182,7 @@ nav a:hover,
     margin: 1rem auto;
     text-decoration: none;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .background-btn {
@@ -255,19 +259,32 @@ section {
     border-radius: 5px;
 }
 
-.search-btn {
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+.sidebar form {
+    display: flex;
+    padding-right: 0.5rem;
+}
+
+.search-side {
     width: 100%;
-    padding: 0.5rem;
-    background-color: #556B2F;
-    color: #FFFFFF;
+    max-width: 600px;
+}
+
+.search-btn {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    width: 2rem;
+    height: auto;
+    color: #556B2F;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    transition: 0.3s;
+}
+
+.search-btn:hover {
+    color: #8B4513;
+    transition: transform 0.3s ease;
+    transform: scale(1.05);
 }
 
 /* Sociala medielänkar i sidebar */
@@ -379,7 +396,7 @@ section {
 .news-container h3 {
     font-size: 2rem;
     margin-bottom: 3rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #D2B48C;
     padding-bottom: 1rem;
 }
 
@@ -427,7 +444,7 @@ section {
 /* Avskiljare */
 .news-divider {
     border: none;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #D2B48C;
     margin-bottom: 2rem;
 }
 
@@ -436,8 +453,14 @@ section {
     margin-top: 2rem;
 }
 
+.about-us h3 {
+    border-bottom: 1px solid #D2B48C;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
 .about {
-border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #D2B48C
 }
 
 /* Kontaktformulär */
@@ -492,9 +515,14 @@ border-bottom: 1px solid #ddd;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+form input[type="text"] {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+form input[type="text"]:focus {
     border-color: #556B2F;
     box-shadow: 0 0 5px rgba(85, 107, 47, 0.5);
     outline: none;
@@ -509,16 +537,6 @@ border-bottom: 1px solid #ddd;
     width: 50%;
     border: none;
     margin-right: 50%;
-}
-
-.contact-form button:hover {
-    background-color: #6b8e3f;
-    transform: scale(1.02);
-}
-
-.contact-form button:active {
-    background-color: #8B4513;
-    transform: scale(0.98);
 }
 
 /* Hamburgerknappen */
@@ -648,7 +666,8 @@ footer .social-media a {
     margin: 0.5rem 0;
 }
 
-footer a, footer p {
+footer a,
+footer p {
     color: #FFFFFF;
 }
 
@@ -659,12 +678,11 @@ footer form {
 }
 
 footer .search-btn {
-    background-color: #8B4513;
     color: #ffffff;
-    margin-left: 1rem;
-    width: 30%;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    width: 2rem;
     height: auto;
-    max-height: 38px;
 }
 
 footer .search-side,
@@ -731,7 +749,8 @@ footer .social-content {
         margin: 0 auto 2rem auto;
     }
 
-    section, .news-container {
+    section,
+    .news-container {
         padding: 0;
     }
 
@@ -739,15 +758,19 @@ footer .social-content {
         font-size: 2.2rem;
     }
 
-    .hero h2, h2 {
+    .hero h2,
+    h2 {
         font-size: 1.8rem;
     }
 
-    h3, .news-container h3, .services h3 {
+    h3,
+    .news-container h3,
+    .services h3 {
         font-size: 1.6rem;
     }
 
-    h4, .news-post h4 {
+    h4,
+    .news-post h4 {
         font-size: 1.3rem;
     }
 
@@ -782,20 +805,14 @@ footer .social-content {
     .contact-form .btn {
         width: 100%;
         margin-right: auto;
-    }    
-
-    footer form {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer .search-btn {
-        width: 100%;
-        margin-left: 0;
     }
 
     .main-footer div {
         min-width: 100%;
+    }
+
+    footer form {
+        padding-right: 0.5rem;
     }
 
     .sub-footer {
