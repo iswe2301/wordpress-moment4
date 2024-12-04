@@ -58,12 +58,13 @@
     </header>
 
     <!-- Herosektion med bild och huvudrubrik -->
-    <section class="hero small-hero">
+    <div class="hero small-hero">
+        <div class="image-overlay"></div>
         <div class="hero-content">
             <h1>ZEN OAS</h1>
             <h2>OM OSS</h2>
         </div>
-    </section>
+    </div>
 
     <!-- Huvudinnehåll -->
     <div class="container">
@@ -97,7 +98,7 @@
             </section>
 
             <!-- Sektion för kontaktformulär -->
-            <section class="contact-form">
+            <section id="contact-form">
                 <h3>Kontakt</h3>
                 <p>
                     Har du frågor, funderingar eller vill boka en tid?
@@ -130,35 +131,26 @@
     <footer>
         <div class="main-footer">
             <div>
-                <h2><i class="fa-solid fa-search"></i> Sök</h2>
-                <form action="#" method="get">
-                    <input class="search-input" type="text" name="search" placeholder="Sök...">
-                    <button type="submit" class="search-btn">
-                        <i class="fa-solid fa-search"></i>
-                    </button>
-                </form>
-            </div>
-            <div>
-                <h2><i class="fa-solid fa-comment"></i> Följ oss</h2>
+                <h2>Följ oss</h2>
                 <div class="social-media">
-                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://tiktok.com" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
-        </div>
-        <div class="main-footer">
             <div>
-                <h2><i class="fa-solid fa-map-marker"></i> Hitta hit</h2>
-                <p><i class="fa-solid fa-home"></i> Adress: Lugnets Väg 10, 123 45 Harmonistaden</p>
+                <h2>Hitta hit</h2>
+                <p><i class="fa-solid fa-map-marker"></i> Adress: Lugnets Väg 10, 123 45 Harmonistaden</p>
                 <p><i class="fa-solid fa-clock"></i> Öppettider: Mån-Fre 10:00 - 20:00 | Lör-Sön 10:00 - 18:00</p>
             </div>
             <div>
-                <h2><i class="fa-solid fa-message"></i> Kontakt</h2>
+                <h2>Kontakt</h2>
                 <p><i class="fa-solid fa-phone"></i> Telefon: <a href="tel:012-3456789">012-345 67 89</a></p>
                 <p><i class="fa-solid fa-envelope"></i> E-post: <a href="mailto:kontakt@zenoas.se">kontakt@zenoas.se</a>
                 </p>
+                <p><i class="fa-solid fa-message"></i> Kontaktformulär: <a href="about.html#contact-form">Skicka
+                        meddelande</a></p>
             </div>
         </div>
         <p class="sub-footer">© 2024 Isa Westling</p>

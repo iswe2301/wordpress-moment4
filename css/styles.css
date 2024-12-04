@@ -10,7 +10,7 @@ body {
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
     font-size: 1rem;
-    color: #8B4513;
+    color: #6d3c1b;
     background-color: #FAF3E0;
     padding: 0;
     margin: 0;
@@ -61,7 +61,7 @@ h6 {
 }
 
 p {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     letter-spacing: 0.5px;
     font-family: "Roboto", sans-serif;
     max-width: 90ch;
@@ -70,13 +70,13 @@ p {
 }
 
 a {
-    color: #556B2F;
+    color: #3f4f25;
     transition: 0.3s;
     border-radius: 5px;
 }
 
 a:hover {
-    color: #8B4513;
+    color: #6d3c1b;
     text-decoration: underline;
     transition: 0.3s;
 }
@@ -87,6 +87,24 @@ img {
     height: auto;
     object-fit: cover;
     display: block;
+}
+
+#breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f4f25;
+    padding: 0.5rem 0;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+#breadcrumbs a {
+    color: white;
+    text-underline-offset: 2px;
 }
 
 /* Header och meny/nav */
@@ -113,11 +131,15 @@ nav ul {
     gap: 1rem;
 }
 
+nav ul li {
+    list-style-type: none;
+}
+
 nav a {
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
     letter-spacing: 1px;
-    color: #8B4513;
+    color: #6d3c1b;
     font-weight: 600;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -126,8 +148,9 @@ nav a {
 /* Aktiva länkar och hover-effekter */
 .current,
 nav a:hover,
-.btn:hover {
-    background-color: #8B4513;
+.btn:hover,
+form input[type="submit"]:hover {
+    background-color: #6d3c1b;
     color: #FFFFFF;
     border-radius: 5px;
     text-decoration: none;
@@ -135,7 +158,7 @@ nav a:hover,
     transform: scale(1.05);
 }
 
-/* Hero-bild om text */
+/* Hero-bild*/
 .hero {
     position: relative;
     background: url('../img/hero.jpg') no-repeat center center/cover;
@@ -146,6 +169,28 @@ nav a:hover,
     color: #FFFFFF;
     text-align: center;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Overlay för bilder */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Textinnehåll */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 20px;
 }
 
 .small-hero {
@@ -168,13 +213,14 @@ nav a:hover,
 }
 
 /* Knappar */
-.btn {
+.btn,
+form input[type="submit"] {
     display: inline-block;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     padding: 0.5rem 1.5rem;
-    background-color: #556B2F;
+    background-color: #3f4f25;
     color: #FFFFFF;
     text-decoration: none;
     border-radius: 5px;
@@ -201,13 +247,14 @@ nav a:hover,
 /* Main-container */
 main {
     flex: 3;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 /* Sektioner */
 section {
     padding: 1rem;
-    text-align: center;
+    max-width: 90ch;
+    margin: 0 auto;
 }
 
 /* Sidebar */
@@ -217,6 +264,7 @@ section {
     padding: 1rem;
     margin-left: 1rem;
     border-radius: 5px;
+    text-align: center;
 }
 
 .sidebar section {
@@ -236,7 +284,7 @@ section {
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #556B2F;
+    color: #3f4f25;
     padding: 0.5rem 0;
 }
 
@@ -248,7 +296,7 @@ section {
     font-size: 1rem;
 }
 
-/* Sökformulär i sidebar & footer */
+/* Sökformulär i sidebar */
 .search-input {
     font-family: "Montserrat", sans-serif;
     font-size: 0.9rem;
@@ -262,6 +310,14 @@ section {
 .sidebar form {
     display: flex;
     padding-right: 0.5rem;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar label {
+    color: #3f4f25;
 }
 
 .search-side {
@@ -274,7 +330,7 @@ section {
     padding: 0 1rem;
     width: 2rem;
     height: auto;
-    color: #556B2F;
+    color: #3f4f25;
     background-color: transparent;
     border: none;
     transition: transform 0.3s ease;
@@ -282,7 +338,7 @@ section {
 }
 
 .search-btn:hover {
-    color: #8B4513;
+    color: #6d3c1b;
     transition: transform 0.3s ease;
     transform: scale(1.05);
 }
@@ -310,6 +366,10 @@ section {
 }
 
 /* Tjänster */
+.services {
+    text-align: center;
+}
+
 .services .service-grid {
     display: flex;
     gap: 1rem;
@@ -369,21 +429,75 @@ section {
 .services-side .service-item p,
 .news-side .news-item p {
     font-size: 1rem;
-    font-weight: bold;
     margin: 0;
 }
 
 .services-side .service-item a,
 .news-side .news-item a {
-    color: #556B2F;
+    color: #3f4f25;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .services-side .service-item a:hover,
 .news-side .news-item a:hover {
-    color: #8B4513;
+    color: #6d3c1b;
     transition: 0.3s;
+}
+
+.news-side ul li {
+    list-style-type: none;
+}
+
+/* Enskilda inlägg */
+.single-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: left;
+}
+
+.single-content img {
+    margin: 2rem auto;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+ul li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+    list-style-position: inside;
+    color: #333;
+}
+
+#start-puff .widget {
+    display: flex;
+    flex-direction: column;
+    background-color: #D2B48C;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#sidebar-puff .widget {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.post-content {
+    margin-bottom: 2rem;
 }
 
 /* Nyhetssektionen */
@@ -398,6 +512,7 @@ section {
     margin-bottom: 3rem;
     border-bottom: 1px solid #D2B48C;
     padding-bottom: 1rem;
+    text-align: center;
 }
 
 /* Nyhetsartiklar */
@@ -417,6 +532,7 @@ section {
 
 .news-content {
     flex: 1;
+    margin-left: 1rem;
 }
 
 /* Rubrik och Meta */
@@ -449,6 +565,11 @@ section {
 }
 
 /* Om oss */
+.about-us,
+#contact-form {
+    text-align: center;
+}
+
 .about-us img {
     margin-top: 2rem;
 }
@@ -460,11 +581,12 @@ section {
 }
 
 .about {
-    border-bottom: 1px solid #D2B48C
+    border-bottom: 1px solid #D2B48C;
+    text-align: center;
 }
 
 /* Kontaktformulär */
-.contact-form {
+form {
     max-width: 700px;
     width: 100%;
     margin: 2rem auto;
@@ -475,25 +597,7 @@ section {
     font-family: "Roboto", sans-serif;
 }
 
-.contact-form h2 {
-    font-size: 2rem;
-    color: #8B4513;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.contact-form p {
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form label {
+form label {
     display: block;
     margin-bottom: 0.5rem;
     font-family: "montserrat", sans-serif;
@@ -502,9 +606,9 @@ section {
     text-align: left;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
+form input[type="text"],
+form input[type="email"],
+form textarea {
     width: 100%;
     padding: 0.8rem;
     font-family: "Roboto", sans-serif;
@@ -515,28 +619,48 @@ section {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-form input[type="text"] {
+form input[type="text"],
+form input[type="search"] {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus,
-form input[type="text"]:focus {
-    border-color: #556B2F;
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus,
+form input[type="text"]:focus,
+form input[type="search"]:focus {
+    border-color: #3f4f25;
     box-shadow: 0 0 5px rgba(85, 107, 47, 0.5);
     outline: none;
 }
 
-.contact-form textarea {
+form textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-.contact-form .btn {
+form input[type="submit"] {
     width: 50%;
     border: none;
     margin-right: 50%;
+}
+
+.cta {
+    background-color: #3f4f25;
+    color: #FFFFFF;
+    padding: 1rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta p {
+    color: #ffffff;
+}
+
+.cta .btn {
+    background-color: #6d3c1b;
 }
 
 /* Hamburgerknappen */
@@ -558,7 +682,7 @@ form input[type="text"]:focus {
 .hamburger-menu .bar {
     width: 30px;
     height: 4px;
-    background-color: #8B4513;
+    background-color: #6d3c1b;
     transition: all 0.3s ease;
 }
 
@@ -633,7 +757,7 @@ form input[type="text"]:focus {
 
 /* Footer */
 footer {
-    background-color: #556B2F;
+    background-color: #3f4f25;
     color: #FFFFFF;
     text-align: center;
     padding: 1rem;
@@ -652,7 +776,8 @@ footer {
 }
 
 .main-footer div {
-    min-width: 405px;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 footer h2 {
@@ -671,21 +796,6 @@ footer p {
     color: #FFFFFF;
 }
 
-footer form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-footer .search-btn {
-    color: #ffffff;
-    font-size: 1.5rem;
-    padding: 0 1rem;
-    width: 2rem;
-    height: auto;
-}
-
-footer .search-side,
 footer .social-content {
     margin: 1rem 2rem;
 }
@@ -727,11 +837,6 @@ footer .social-content {
 
     .main-footer div {
         margin: 1rem 0;
-    }
-
-    footer form {
-        max-width: 400px;
-        margin: 0 auto;
     }
 
 }
@@ -796,23 +901,20 @@ footer .social-content {
 
     .news-content {
         text-align: center;
+        margin-left: 0;
     }
 
     .contact-container {
         padding: 1rem;
     }
 
-    .contact-form .btn {
+    form input[type="submit"] {
         width: 100%;
         margin-right: auto;
     }
 
     .main-footer div {
         min-width: 100%;
-    }
-
-    footer form {
-        padding-right: 0.5rem;
     }
 
     .sub-footer {
